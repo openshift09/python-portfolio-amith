@@ -1,0 +1,10 @@
+{
+    "greeting": "Hello! How can I help you today?",
+    "python": "Python is a popular programming language used for automation, data science, and web development.",
+    "devops": "DevOps is a collaboration between development and operations to automate software delivery.",
+    "docker": "Docker is a tool that allows you to package applications into containers.",
+    "kubernetes": "Kubernetes is a container orchestration platform used to manage large applications.",
+    "terraform": "Terraform is an IaC tool used to create and manage cloud infrastructure.",
+    "ansible": "Ansible is a configuration management tool used to automate servers.",
+    "goodbye": "Goodbye! Have a great day!"
+}
