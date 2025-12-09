@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: nodejs
+        image: <dockerhub-username>/k8s-node:v1
+        ports:
+        - containerPort: 3000
+        env:
+        - name: APP_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: node-config
+              key: APP_MESSAGE
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: node-secret
+              key: PASSWORD

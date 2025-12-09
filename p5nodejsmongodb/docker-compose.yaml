@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: node_mongo_app
+    ports:
+      - "3001:3000"
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo_db
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27018:27017"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  mongo_data:
